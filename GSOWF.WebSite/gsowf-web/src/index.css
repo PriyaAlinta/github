@@ -1,0 +1,58 @@
+.nwisFont {
+  font-family: "AvenirLTPro-Roman",Arial,Tahoma,sans-serif;
+  font-size: 16px;
+  color: rgb(117, 115, 112);
+  line-height: 26px;
+}
+
+/*Header & Footer*/
+.header {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+.header .nav-item {
+  margin-top: 30px;
+  margin-bottom: 1px;
+}
+.header .nav-link:hover, .header button.active {
+  border-bottom: 3px solid #F26722;
+}
+.header .nav-link {
+  font-family: AvenirLTPro-Black;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 14px;
+  padding: 8px 2px 16px 2px;
+  color: rgb(117, 115, 112) !important;
+  border-radius: 0em;
+  border-left: 0em;
+  border-right: 0em;
+  border-bottom: 3px solid transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  background-color: rgb(54, 54, 54); 
+  height: 75px;
+  padding-top: 15px;
+  padding-left: 20px;    
+}
+.footer .nav-item {
+  margin-top: 25px;
+  margin-left: 60px;
+}
+.footer .nav-item:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+.footer .nav-link {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 0;
+}
+
+svg {
+  color: #F26722;
+}
+/*End Header & Footer*/

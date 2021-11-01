@@ -1,0 +1,10 @@
+.contactBanner {
+    background-color: white;
+    height: 422px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.contactIcon {
+    margin-top: -2px;
+}

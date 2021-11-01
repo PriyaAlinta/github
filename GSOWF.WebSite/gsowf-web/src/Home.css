@@ -1,0 +1,30 @@
+.homeMainDiv {
+    text-align: justify;
+    text-justify: inter-word;
+    width: 1100px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+.homeText {
+    padding: 5px 20px 0 20px;
+}
+.homeBanner {
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    height: 422px;
+}
+.homeParagraphImg1 {
+    border-radius: 10px;
+}
+
+.homeCardIcon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.homeCardHeader {
+    padding-top: 8px;
+}

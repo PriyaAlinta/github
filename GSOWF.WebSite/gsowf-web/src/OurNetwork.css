@@ -1,0 +1,24 @@
+.networkBanner {
+    background-color: white;
+    height: 422px;
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+    background-size: cover;
+}
+.networkContent {
+    width: 1000px;
+}
+.networkContent h4 {
+    line-height: 44px;
+    margin-bottom: 0;
+}
+.networkContent a {
+    color: rgb(117, 115, 112);
+}
+.alintaIcon {
+    width: 45px;
+    height: 45px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

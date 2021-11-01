@@ -1,0 +1,15 @@
+.pcBanner {
+    background-color: white;
+    height: 422px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+/* .publicationIcon {
+    width: 36px;
+    height: 36px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(https://www.alintaenergy.com.au/nsw/-/jssmedia/alinta-website/icons-svg/login-2.svg);
+} */

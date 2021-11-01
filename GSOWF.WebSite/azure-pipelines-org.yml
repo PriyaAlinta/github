@@ -1,0 +1,37 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+# Installs Node.js on the vmImage and builds the relevant output files
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  workingDirectory: ./adwap-web
+  displayName: 'npm install'  
+- script: |
+    npm run build
+  workingDirectory: ./adwap-web
+  displayName: 'npm run build'
+
+# Copies files from the Windows Image over to the storage account
+# Don't change from AzureFileCopy@3, @4 version has a bug in it.
+- task: AzureFileCopy@3
+  inputs:
+    SourcePath: './adwap-web/build/**'
+    azureSubscription: 'NWISDeploymentServiceConnection-AzureCSPSub'
+    Destination: 'AzureBlob'
+    storage: 'nwiswebasedev01'
+    ContainerName: '$web'
+    additionalArgumentsForBlobCopy: --recursive=true

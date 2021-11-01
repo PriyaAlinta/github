@@ -1,0 +1,78 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildNodeJSCode
+    steps:
+     - task: NodeTool@0
+       inputs:
+         versionSpec: '10.x'
+       displayName: 'Install Node.js'
+     - script: |
+         npm install
+       workingDirectory: ./adwap-web
+       displayName: 'npm install'  
+     - script: |
+        npm run build
+       workingDirectory: ./adwap-web
+       displayName: 'npm run build'
+     - task: ArchiveFiles@2
+       inputs:
+        rootFolderOrFile: './adwap-web'
+        includeRootFolder: true
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        replaceExistingArchive: true
+     - task: PublishBuildArtifacts@1
+       inputs:
+          pathToPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: drop
+
+- stage: Deploy
+  jobs:
+  - job: DeployDEV
+    steps:
+     - task: AzureFileCopy@3
+       inputs:
+         SourcePath: './adwap-web/build/**'
+         azureSubscription: 'NWISDeploymentServiceConnection-AzureCSPSub'
+         Destination: 'AzureBlob'
+         storage: 'nwiswebasedev01'
+         ContainerName: '$web'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
